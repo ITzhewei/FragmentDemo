@@ -3,7 +3,7 @@ package com.example.john.fragmentdemo.model.CriminallIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.PersistableBundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -36,8 +36,8 @@ public class CrimePagerActivity extends FragmentActivity {
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crime_pager);
         ButterKnife.bind(this);
 
@@ -66,4 +66,5 @@ public class CrimePagerActivity extends FragmentActivity {
             }
         }
     }
+
 }

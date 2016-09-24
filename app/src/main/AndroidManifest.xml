@@ -12,9 +12,9 @@
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
-
         </activity>
         <activity android:name=".model.CriminallIntent.CrimePagerActivity"/>
+        <activity android:name=".model.CriminallIntent.CrimeActivity"/>
         <activity android:name=".model.CriminallIntent.CrimeListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
