@@ -5,10 +5,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
 
 import com.example.john.fragmentdemo.R;
 
@@ -21,7 +21,7 @@ import butterknife.ButterKnife;
 /**
  * Created by ZheWei on 2016/9/24.
  */
-public class CrimePagerActivity extends FragmentActivity {
+public class CrimePagerActivity extends AppCompatActivity {
     public static final String EXTRA_CRIME_ID = "com.bignerdranch.android.criminalintent.crime_id";
 
     @BindView(R.id.vp_crime_pager)

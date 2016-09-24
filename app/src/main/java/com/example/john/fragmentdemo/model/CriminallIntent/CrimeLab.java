@@ -42,4 +42,8 @@ public class CrimeLab {
         }
         return null;
     }
+
+    public void addCrime(Crime c) {
+        mCrimeList.add(c);
+    }
 }
