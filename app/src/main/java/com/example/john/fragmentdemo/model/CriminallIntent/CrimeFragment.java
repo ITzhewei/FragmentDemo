@@ -70,6 +70,12 @@ public class CrimeFragment extends Fragment {
     }
 
     @Override
+    public void onPause() {
+        super.onPause();
+        CrimeLab.getCrimeLab(getActivity()).upDateCrime(mCrime);
+    }
+
+    @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode != Activity.RESULT_OK) {
             return;
@@ -114,7 +120,7 @@ public class CrimeFragment extends Fragment {
                 mCrime.setBoolean(isChecked);
             }
         });
-        mCrimeSolved.setChecked(mCrime.isBoolean());
+        mCrimeSolved.setChecked(mCrime.getBoolean());
     }
 
 

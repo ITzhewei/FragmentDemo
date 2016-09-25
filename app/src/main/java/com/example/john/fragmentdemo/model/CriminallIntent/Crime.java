@@ -20,7 +20,7 @@ public class Crime {
         mDate = date;
     }
 
-    public boolean isBoolean() {
+    public boolean getBoolean() {
         return mBoolean;
     }
 
@@ -28,8 +28,8 @@ public class Crime {
         mBoolean = aBoolean;
     }
 
-    public Crime() {
-        mId = UUID.randomUUID();
+    public Crime(UUID id) {
+        mId = id;
         mDate = new Date();
     }
 

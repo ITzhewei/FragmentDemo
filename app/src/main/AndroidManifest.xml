@@ -13,8 +13,20 @@
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".model.CriminallIntent.CrimePagerActivity"/>
-        <activity android:name=".model.CriminallIntent.CrimeActivity"/>
+
+        <activity
+            android:name=".model.CriminallIntent.CrimePagerActivity"
+            android:label="@string/app_name"
+            android:parentActivityName=".model.CriminallIntent.CrimeListActivity"
+            >
+        </activity>
+        <activity
+            android:name=".model.CriminallIntent.CrimeActivity"
+            android:label="@string/app_name"
+            android:parentActivityName=".model.CriminallIntent.CrimeListActivity"
+            >
+        </activity>
+
         <activity android:name=".model.CriminallIntent.CrimeListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
