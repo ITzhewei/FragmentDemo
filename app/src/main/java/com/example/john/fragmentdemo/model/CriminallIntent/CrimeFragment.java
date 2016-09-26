@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
@@ -25,6 +26,7 @@ import android.widget.ImageView;
 
 import com.example.john.fragmentdemo.R;
 import com.example.john.fragmentdemo.model.date.DatePickerFragment;
+import com.example.john.fragmentdemo.utils.PictureUtil;
 
 import java.io.File;
 import java.text.DateFormat;
@@ -120,7 +122,16 @@ public class CrimeFragment extends Fragment {
             String suspect = cursor.getString(0);
             mCrime.setSuspect(suspect);
             mBtnChoose.setText(suspect);
+        } else if (requestCode == REQUEST_PHOTO) {
+            updatePhotoView();
+
         }
+    }
+
+    //更新图片的视图
+    private void updatePhotoView() {
+        Bitmap scaledBitmap = PictureUtil.getScaledBitmap(mPhotoFile.getPath(), getActivity());
+        mIvPhoto.setImageBitmap(scaledBitmap);
     }
 
     private void setButtonDate() {
@@ -179,6 +190,8 @@ public class CrimeFragment extends Fragment {
             Uri uri = Uri.fromFile(mPhotoFile);
             mPhotoIntent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
         }
+        //更新图片
+        updatePhotoView();
     }
 
 

@@ -2,8 +2,17 @@
 <manifest package="com.example.john.fragmentdemo"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18"/>
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18"/>
+    <!--只有在安卓设备API等级18及以下的需要申请该权限-->
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false"/>
 
     <application
         android:allowBackup="true"
