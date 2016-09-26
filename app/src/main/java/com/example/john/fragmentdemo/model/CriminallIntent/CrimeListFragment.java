@@ -18,6 +18,8 @@ import android.widget.TextView;
 
 import com.example.john.fragmentdemo.R;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.UUID;
 
@@ -56,6 +58,11 @@ public class CrimeListFragment extends Fragment {
         return view;
     }
 
+    /**
+     * 当activity销毁的时候保存信息
+     *
+     * @param outState
+     */
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
@@ -165,12 +172,13 @@ public class CrimeListFragment extends Fragment {
                 mTitleTextView = (TextView) itemView.findViewById(R.id.tv_list_item_title);
                 mDateTextView = (TextView) itemView.findViewById(R.id.tv_list_item_date);
                 mSolvedCheckBox = (CheckBox) itemView.findViewById(R.id.cb_list_item_solved);
-
             }
 
             public void bindCrime(final Crime crime) {
                 mTitleTextView.setText(crime.getTitle());
-                mDateTextView.setText(crime.getDate().toString());
+                DateFormat format = SimpleDateFormat.getDateTimeInstance();
+                String date = format.format(crime.getDate());
+                mDateTextView.setText(date);
                 mSolvedCheckBox.setChecked(crime.getBoolean());
 
                 itemView.setOnClickListener(new View.OnClickListener() {

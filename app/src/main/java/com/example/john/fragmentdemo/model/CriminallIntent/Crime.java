@@ -10,7 +10,21 @@ public class Crime {
     private UUID mId;
     private String mTitle;
     private Date mDate;
-    private boolean mBoolean;
+    private boolean mBoolean;//是否已经解决
+    private String mSuspect; //嫌疑犯
+
+    //设置图片的保存位置
+    public String getPhotoFileName() {
+        return "IMG_" + getId().toString() + ".jpg";
+    }
+
+    public String getSuspect() {
+        return mSuspect;
+    }
+
+    public void setSuspect(String suspect) {
+        mSuspect = suspect;
+    }
 
     public Date getDate() {
         return mDate;

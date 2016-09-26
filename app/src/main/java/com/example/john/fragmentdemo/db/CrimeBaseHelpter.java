@@ -20,10 +20,11 @@ public class CrimeBaseHelpter extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table " + CrimeDbSchma.CrimeTable.NAME + "(" +
                 "_id integer primary key autoincrement, " +
-                CrimeDbSchma.CrimeTable.Cols.UUID   + ", " +
-                CrimeDbSchma.CrimeTable.Cols.TITLE  + ", " +
-                CrimeDbSchma.CrimeTable.Cols.DATE   + ", " +
-                CrimeDbSchma.CrimeTable.Cols.SOLVED +
+                CrimeDbSchma.CrimeTable.Cols.UUID + ", " +
+                CrimeDbSchma.CrimeTable.Cols.TITLE + ", " +
+                CrimeDbSchma.CrimeTable.Cols.DATE + ", " +
+                CrimeDbSchma.CrimeTable.Cols.SOLVED + ", " +
+                CrimeDbSchma.CrimeTable.Cols.SUSPECT +
                 ")"
         );
     }
